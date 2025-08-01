@@ -2,6 +2,7 @@ const names = ['Edoardo', 'Simone', 'Francesco'];
 
 // Stampa in console tutti i nomi
 
+names.forEach(nomi => console.log(nomi));
 
 const people = [
   { name: 'Paolo', age: 35 },
@@ -11,11 +12,12 @@ const people = [
 
 // Stampa in console tutti i nomi
 
+people.forEach(person => console.log(person.name));
 
 const numbers = [2, 8, 4, 7, 2, 87];
 
 // Crea un nuovo array in cui tutti i numeri siano incrementati di 1
-
+const numbers1 = numbers.map((numeri) => console.log(numeri + 1));
 
 const posts = [
   { author: 'Marco', date: '12/3/2021', content: 'lorem ipsum...' },
@@ -26,12 +28,15 @@ const posts = [
 
 // Crea un nuovo array coi nomi di tutti gli autori
 
+const authors = posts.map((autori) => console.log(autori.author));
 
 
 const nums = [2, 8, 4, 7, 12, 87];
 
 // Crea un array a partire dall'array nums, che abbia solo i numeri pari
 
+const nums1 = nums.filter((even) => even % 2 === 0);
+console.log(nums1);
 
 const pencils = [
   { brand: 'Faber-Castell', weight: 8, sizeInCm: 12 },
@@ -47,6 +52,11 @@ const pencils = [
 ];
 
 // A partire dall'array fornito, crea due array. Uno con le matite lunghe almeno 15cm. L'altro con le restanti.
+const longP = pencils.filter((long) => long.sizeInCm >= 15 );
+console.log(longP);
+const shortP = pencils.filter((short) => short.sizeInCm < 15);
+console.log(shortP);
+
 
 
 
@@ -73,6 +83,8 @@ const students = [
 
 // Recupera i dati dello studente con id 2
 
+const studente = students.find((studente) => studente.id === 2);
+console.log(studente);
 
 const students_2 = [
   {
@@ -88,7 +100,7 @@ const students_2 = [
     classroom: '4A'
   },
   {
-	  id: 3
+	  id: 3,
     name: 'Luigi Banzi',
     age: 33,
     classroom: '5B'
@@ -96,3 +108,6 @@ const students_2 = [
 ];
 
 // Recuperare la classe dello studente Marco Lanci
+
+const studente_1 = students_2.find((studente_1) => studente_1.name === 'Marco Lanci');
+console.log(studente_1.classroom);
